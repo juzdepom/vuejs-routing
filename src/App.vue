@@ -6,7 +6,9 @@
                 <h1>Routing</h1>
                 <hr>
                 <router-view name="header-top"></router-view>
-                <router-view></router-view>
+                <transition name="slide" mode="out-in">
+                  <router-view></router-view>
+                </transition>
                 <router-view name="header-bottom"></router-view>
             </div>
         </div>
@@ -24,4 +26,41 @@
 </script>
 
 <style>
+  .slide-enter{
+    opacity: 0;
+  }
+  .slide-enter-active {
+    animation: slide-in 1s ease-out forwards;
+    transition: opacity 1s ease;
+  }
+  .slide-leave {
+    opacity: 0;
+  },
+  /*Couldn't figure out how to get slide-leave animation to work*/
+  /*
+  .slide-leave-active {
+    animation: slide-out 3s ease-out forwards;
+    transition: opacity 3s ease;
+    opacity: 0;
+    position: absolute;
+
+  },*/
+
+  @keyframes slide-out {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-30px);
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      transform: translateY(-30px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
 </style>
