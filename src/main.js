@@ -6,7 +6,9 @@ import { routes } from './routes'
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  routes
+  routes,
+  // no longer shows the hashtag in the url
+  mode: 'history'
 });
 
 new Vue({
