@@ -9,7 +9,6 @@
           type="checkbox"
           @click="confirmed = !confirmed"
           style="margin-left:5px">
-    <!-- <button @click="confirmed = true" class="btn btn-primary">Confirm</button> -->
     <br><br>
     <div style="height:700px; background-color:lightgray"></div>
     <br>

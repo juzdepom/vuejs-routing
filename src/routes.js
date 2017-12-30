@@ -1,9 +1,30 @@
-import User from './components/user/User.vue';
 import Home from './components/Home.vue';
-import UserStart from './components/user/UserStart.vue';
-import UserEdit from './components/user/UserEdit.vue';
-import UserDetail from './components/user/UserDetail.vue';
 import Header from './components/Header.vue';
+
+const User = resolve => {
+  //this tells webpack, whenever we load something that is in User.vue
+  require.ensure(['./components/user/User.vue'], () => {
+    resolve(require('./components/user/User.vue'))
+  })
+}
+const UserStart = resolve => {
+  //this tells webpack, whenever we load something that is in User.vue
+  require.ensure(['./components/user/UserStart.vue'], () => {
+    resolve(require('./components/user/UserStart.vue'))
+  })
+}
+const UserEdit = resolve => {
+  //this tells webpack, whenever we load something that is in User.vue
+  require.ensure(['./components/user/UserEdit.vue'], () => {
+    resolve(require('./components/user/UserEdit.vue'))
+  })
+}
+const UserDetail = resolve => {
+  //this tells webpack, whenever we load something that is in User.vue
+  require.ensure(['./components/user/UserDetail.vue'], () => {
+    resolve(require('./components/user/UserDetail.vue'))
+  })
+}
 
 export const routes = [
   { path: '', name: 'home', components: {
