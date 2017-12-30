@@ -31,6 +31,7 @@
       }
     },
     beforeRouteEnter(to, from , next){
+      //check if user is allowed to enter a page
       if(true){
         next();
       } else {
