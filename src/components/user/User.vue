@@ -14,6 +14,12 @@
         id: this.$route.params.id
       }
     },
+    watch: {
+      // if we dont add this the this.id does not change even though the url changes
+      '$route'(to, from) {
+        this.id = to.params.id
+      }
+    },
     methods: {
       navigateToHome(){
         this.$router.push('/');
